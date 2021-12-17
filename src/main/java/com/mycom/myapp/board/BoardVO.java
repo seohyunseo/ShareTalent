@@ -5,11 +5,13 @@ import java.util.Date;
 public class BoardVO {
 	private int seq;
 	private String title;
+	private String category;
 	private String writer;
 	private String content;
+	private String rate;
+	private String fee;
 	private Date regdate;
 	private int cnt;
-	
 	public int getSeq() {
 		return seq;
 	}
@@ -21,6 +23,12 @@ public class BoardVO {
 	}
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
 	}
 	public String getWriter() {
 		return writer;
@@ -34,6 +42,18 @@ public class BoardVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
+	public String getRate() {
+		return rate;
+	}
+	public void setRate(String rate) {
+		this.rate = rate;
+	}
+	public String getFee() {
+		return fee;
+	}
+	public void setFee(String fee) {
+		this.fee = fee;
+	}
 	public Date getRegdate() {
 		return regdate;
 	}
@@ -46,4 +66,6 @@ public class BoardVO {
 	public void setCnt(int cnt) {
 		this.cnt = cnt;
 	}
+	
+	
 }
