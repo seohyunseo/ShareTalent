@@ -1,0 +1,3 @@
+https://hgu-spring1.herokuapp.com/boardlist
+https://hgu-spring1.herokuapp.com/board
+https://hgu-spring1.herokuapp.com/
