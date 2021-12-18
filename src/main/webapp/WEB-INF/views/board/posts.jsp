@@ -57,9 +57,12 @@ pageEncoding="UTF-8"%>
 	                            <div class="card-body p-4">
 	                                <div class="text-center">
 	                                    <!-- Product name-->
-	                                    <h5 class="fw-bolder">${u.getTitle()}</h5>
+	                                    <h5 class="fw-bolder">Title : ${u.getTitle()}</h5>
+	                                    <h6 class="fw-bolder">Category : ${u.getCategory()}</h6>
 	                                    <!-- Product price-->
 	                                    Lecturer : ${u.getWriter()}
+	                                    <br>
+	                                    Rate : ${u.getRate()}
 	                                    <br>
 	                                    Fee : ${u.getFee()}
 	                                </div>
