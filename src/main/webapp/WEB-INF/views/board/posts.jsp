@@ -2,70 +2,86 @@
 pageEncoding="UTF-8"%>
 <%@page import="com.mycom.myapp.board.BoardDAO,com.mycom.myapp.board.BoardVO,java.util.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>free board</title>
-<style>
-#list {
-font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-border-collapse: collapse;
-width: 100%;
-}
-#list td, #list th {
-border: 1px solid #ddd;
-padding: 8px;
-text-align:center;
-}
-#list tr:nth-child(even){background-color: #f2f2f2;}
-#list tr:hover {background-color: #ddd;}
-#list th {
-padding-top: 12px;
-padding-bottom: 12px;
-text-align: center;
-background-color: #006bb3;
-color: white;
-}
-</style>
-<script>
-function delete_ok(id){
-	var a = confirm("정말로 삭제하겠습니까?");
-	if(a) location.href='deleteok/' + id;
-}
-</script>
-</head>
-<body>
-<h1>자유게시판</h1>
 
-<table id="list" width="90%">
-<tr>
-<th>Id</th>
-<th>Title</th>
-<th>Category</th>
-<th>Writer</th>
-<th>Content</th>
-<th>Regdate</th>
-<th>Rate</th>
-<th>Fee</th>
-<th>Edit</th>
-<th>Delete</th>
-</tr>
-<c:forEach items="${list}" var="u">
-<tr>
-	<td>${u.getSeq()}</td>
-	<td>${u.getTitle()}</td>
-	<td>${u.getCategory()}</td>
-	<td>${u.getWriter()}</td>
-	<td>${u.getContent()}</td>
-	<td>${u.getRegdate()}</td>
-	<td>${u.getRate()}</td>
-	<td>${u.getFee()}</td>
-	<td><a href="editpost/${u.getSeq()}">Edit</a></td>
-	<td><a href="javascript:delete_ok('${u.getSeq()}')">Delete</a></td>
-</tr>
-</c:forEach>
-</table>
-<br/><a href="add">Add New Post</a>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Share Talent Homepage</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../resources/css/styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#!">Share Talent</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="list">Home</a></li>
+                        <li class="nav-item"><a href="add">Add</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="bg-dark py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">Share Your Special Talent</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">With Share Talent</p>
+                </div>
+            </div>
+        </header>
+        <!-- Section-->
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                
+	                <c:forEach items="${list}" var="u">
+	                    <div class="col mb-5">
+	                        <div class="card h-100">
+	                            <!-- Product image-->
+	                            <div class="card-img-top">
+	                           		 Content : ${u.getContent()}
+	                            </div>
+	                            <!-- Product details-->
+	                            <div class="card-body p-4">
+	                                <div class="text-center">
+	                                    <!-- Product name-->
+	                                    <h5 class="fw-bolder">${u.getTitle()}</h5>
+	                                    <!-- Product price-->
+	                                    Lecturer : ${u.getWriter()}
+	                                    <br>
+	                                    Fee : ${u.getFee()}
+	                                </div>
+	                            </div>
+	                            <!-- Product actions-->
+	                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+	                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="editpost/${u.getSeq()}">Edit</a></div>
+	                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="deleteok/${u.getSeq()}">Delete</a></div>
+	                            </div>
+	                        </div>
+	                    </div>
+                    </c:forEach>               
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Share Talent 2021</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="../resources/js/scripts.js"></script>
+    </body>
 </html>

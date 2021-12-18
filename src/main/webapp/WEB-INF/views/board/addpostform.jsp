@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Add Lecture Page</title>
 </head>
 <body>
 
-<h1>Add New Post</h1>
+<h1>Add New Lecture Form</h1>
 <form action="addok" method="post">
 <table>
 <tr><td>Title:</td><td><input type="text" name="title"/></td></tr>
@@ -17,7 +17,7 @@
 <tr><td>Content:</td><td><textarea cols="50" rows="5" name="content"></textarea></td></tr>
 <tr><td>Rate:</td><td><input type="text" name="rate"/></td></tr>
 <tr><td>Fee:</td><td><input type="text" name="fee"/></td></tr>
-<tr><td><a href="posts.jsp">View All Records</a></td><td align="right"><input type="submit" value="Add Post"/></td></tr>
+<tr><td><a href="list">Return To Homepage</a></td><td align="right"><input type="submit" value="Add Lecture"/></td></tr>
 </table>
 </form>
 

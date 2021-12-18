@@ -9,11 +9,11 @@ import="com.mycom.myapp.board.BoardDAO,com.mycom.myapp.board.BoardVO"%>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Edit Form</title>
+<title>Edit Lecture Page</title>
 </head>
 <body>
 
-<h1>Edit Form</h1>
+<h1>Edit Lecture Form</h1>
 <form:form commandName="boardVO" action="../editok" method="post">
 	<form:hidden path="seq" />
 	<table>
@@ -43,7 +43,7 @@ import="com.mycom.myapp.board.BoardDAO,com.mycom.myapp.board.BoardVO"%>
 		</tr>
 	</table>
 
-	<input type="submit" value="Edit Post" />
+	<input type="submit" value="Edit Lecture" />
 	<input type="button" value="Cancel" onclick="history.back()" />
 
 </form:form>

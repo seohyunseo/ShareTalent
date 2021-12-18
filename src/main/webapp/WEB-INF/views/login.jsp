@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Share Talent Login Page</title>
 <style>
 img, label { display:inline-block;}
 label{ width:130px}
@@ -13,7 +13,7 @@ button{ background-color:blue; color:white;font-size:15px}
 </head>
 <body>
 <div style='width:100%;text-align:center;padding-top:100px'>
-<img src='../img/seohyunseo.jpg' height="250">
+<img src='../img/talentphoto.png'>
 <form method="post" action="loginOk">
 <div><label>User ID: </label><input type='text' name='userid' /></div>
 <div><label>Password: </label>
